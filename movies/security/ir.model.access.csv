@@ -1,0 +1,4 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_mt_movie,name_mt_movie,model_mt_movie,,1,1,1,1
+access_mt_genre,name_mt_genre,model_mt_genre,,1,1,1,1
+access_mt_category,name_mt_category,model_mt_category,,1,1,1,1

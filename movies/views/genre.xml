@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="mt_genre_view_act" model="ir.actions.act_window">
+            <field name="name">Genre</field>
+            <field name="res_model">mt.genre</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+        <record id="mt_genre_view_tree" model="ir.ui.view">
+            <field name="name">mt.genre.view.tree</field>
+            <field name="model">mt.genre</field>
+            <field name="arch" type="xml">
+                <tree string="genre">
+                    <field name="name" />
+                    <field name="color" widget="color_picker"/>
+                </tree>
+            </field>
+        </record>
+        <record id="mt_genre_view_form" model="ir.ui.view">
+            <field name="name">mt.genre.view.form</field>
+            <field name="model">mt.genre</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="name" />
+                                <field name="color" widget="color_picker"/>
+                                <separator/>
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+    </data>
+</odoo>

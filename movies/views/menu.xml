@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <menuitem id="menu_movie" name="Movie" action="mt_movie_view_act" web_icon="movie,static/description/icon.png" />
+    <menuitem id="menu_mtconfiguration" name="Configuration" parent="menu_movie"/>
+    <menuitem id="menu_genre" name="Genre" action="mt_genre_view_act" parent="menu_mtconfiguration" sequence="10"/>
+    <menuitem id="menu_mtcategory" name="Category" action="mt_category_view_act" parent="menu_mtconfiguration" sequence="11"/>
+    <menuitem id="menu_mtcountry" name="Countries" action="base.action_country" parent="menu_mtconfiguration" sequence="12"/>
+</odoo>
