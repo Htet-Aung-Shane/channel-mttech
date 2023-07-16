@@ -3,12 +3,25 @@ from odoo import models, fields, api
 class Movie(models.Model):
     _name = 'mt.movie'
     _description = 'Movies'
+    no = fields.Char (
+        'Application Number', size=16, copy=False,
+        readonly=True, store=True,
+        default=lambda self:
+        self.env['ir.sequence'].next_by_code('mt.movie'))
     name = fields.Char ('Name')
     review = fields.Text ('Review')
     image = fields.Binary()
     attachment = fields.Binary()
 
+    partner_id = fields.Many2one('res.partner',string='Publisher', compute="compute_publisher", store=True)
     genre_ids = fields.Many2many('mt.genre', string='Genre') 
     category_ids = fields.Many2many('mt.category', string='Category') 
     country_id = fields.Many2one('res.country',string='Country')
+    tag_id = fields.Many2one('mt.tag',string='Movie Type')
     active = fields.Boolean(default=True)
+
+    @api.depends('name')
+    def compute_publisher(self):
+        for rec in self:
+            rec.partner_id = self.env.user.partner_id
+            print(self.env.user.partner_id)

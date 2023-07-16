@@ -10,3 +10,11 @@ class Category(models.Model):
     name = fields.Char ('Name')
     color = fields.Integer(string='Color', default=_get_default_color)
     active = fields.Boolean(default=True, help="The active field allows you to hide the category without removing it.")
+
+class MovieType(models.Model):
+    _name = 'mt.tag'
+    _description = 'Tags'
+
+    name = fields.Char ('Name')
+
+

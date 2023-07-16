@@ -1,1 +1,1 @@
-from . import movie,genre,category
+from . import movie,genre,category,cast

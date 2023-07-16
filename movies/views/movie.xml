@@ -21,21 +21,36 @@
             <field name="name">mt.moview.view.form</field>
             <field name="model">mt.movie</field>
             <field name="arch" type="xml">
-                <form string="">                    
+                <form string="">
                     <sheet>
-                        <field name="image" widget="image" class="oe_avatar"/>
+
+                        <widget name="web_ribbon" title="Archived" bg_color="bg-danger"
+                            attrs="{'invisible': [('active', '=', True)]}" />
+                        <field name="image" widget="image" class="oe_avatar" />
                         <group>
                             <group>
-                                <field name="name" />
-                                <field name="attachment" />
-                                <field name="genre_ids" widget="many2many_tags" options="{'no_edit': True, 'no_create': True, 'no_open': True}" />
-                                <field name="category_ids" widget="many2many_tags" options="{'no_edit': True, 'no_create': True, 'no_open': True}"/>
-                                <field name="country_id" options="{'no_edit': True, 'no_create': True, 'no_open': True}"/>
-                            </group>  
+                                <field name="no" />
+                                <field name="name" required="1"/>
+                                <field name="genre_ids" widget="many2many_tags"
+                                    options="{'no_edit': True, 'no_create': True, 'no_open': True}" required="1"/>
+                                <field name="category_ids" widget="many2many_tags"
+                                    options="{'no_edit': True, 'no_create': True, 'no_open': True}" required="1"/>
+                                <field name="country_id"
+                                    options="{'no_edit': True, 'no_create': True, 'no_open': True}" required="1"/>
+                                <field name="active" invisible="1" />
+                            </group>
                             <group>
                                 <field name="review" />
-                            </group>                         
+                                <field name="attachment" />
+                                <field name="tag_id"
+                                    options="{'no_edit': True, 'no_create': True, 'no_open': True}" required="1"/>
+                                <field name="partner_id"
+                                    options="{'no_edit': True, 'no_create': True, 'no_open': True}" />
+                            </group>
                         </group>
+                        <page name="movie_ids" string="info">
+                            
+                        </page>
                     </sheet>
                 </form>
             </field>
