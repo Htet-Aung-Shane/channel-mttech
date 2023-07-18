@@ -30,27 +30,40 @@
                         <group>
                             <group>
                                 <field name="no" />
-                                <field name="name" required="1"/>
+                                <field name="name" required="1" />
                                 <field name="genre_ids" widget="many2many_tags"
-                                    options="{'no_edit': True, 'no_create': True, 'no_open': True}" required="1"/>
+                                    options="{'no_edit': True, 'no_create': True, 'no_open': True}"
+                                    required="1" />
                                 <field name="category_ids" widget="many2many_tags"
-                                    options="{'no_edit': True, 'no_create': True, 'no_open': True}" required="1"/>
+                                    options="{'no_edit': True, 'no_create': True, 'no_open': True}"
+                                    required="1" />
                                 <field name="country_id"
-                                    options="{'no_edit': True, 'no_create': True, 'no_open': True}" required="1"/>
+                                    options="{'no_edit': True, 'no_create': True, 'no_open': True}"
+                                    required="1" />
                                 <field name="active" invisible="1" />
                             </group>
                             <group>
                                 <field name="review" />
                                 <field name="attachment" />
                                 <field name="tag_id"
-                                    options="{'no_edit': True, 'no_create': True, 'no_open': True}" required="1"/>
+                                    options="{'no_edit': True, 'no_create': True, 'no_open': True}"
+                                    required="1" />
                                 <field name="partner_id"
                                     options="{'no_edit': True, 'no_create': True, 'no_open': True}" />
                             </group>
                         </group>
-                        <page name="movie_ids" string="info">
-                            
-                        </page>
+                        <notebook>
+                            <page name="vlinks" string="Video Links">
+                                <field name="link_ids" />
+                            </page>
+                            <page name="cast" string="Cast">
+                                <field name="cast_id" />
+                            </page>
+                            <page name="additional" string="Additional">
+                                
+                            </page>
+                        </notebook>
+
                     </sheet>
                 </form>
             </field>

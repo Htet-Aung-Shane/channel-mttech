@@ -18,10 +18,20 @@ class Movie(models.Model):
     category_ids = fields.Many2many('mt.category', string='Category') 
     country_id = fields.Many2one('res.country',string='Country')
     tag_id = fields.Many2one('mt.tag',string='Movie Type')
+    cast_id = fields.Many2one('mt.cast', string='Casts')
+    link_ids = fields.One2many('mt.link','link_id',string='Movie Link')
     active = fields.Boolean(default=True)
+    
 
     @api.depends('name')
     def compute_publisher(self):
         for rec in self:
             rec.partner_id = self.env.user.partner_id
             print(self.env.user.partner_id)
+
+class Link(models.Model):
+    _name = 'mt.link'
+    _description = 'Links'
+    name = fields.Char ('Name')
+    link = fields.Char ('Link')
+    link_id = fields.Many2one('mt.movie', string='Links To Movie')

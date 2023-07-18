@@ -4,3 +4,4 @@ access_mt_genre,name_mt_genre,model_mt_genre,,1,1,1,1
 access_mt_category,name_mt_category,model_mt_category,,1,1,1,1
 access_mt_tag,name_mt_tag,model_mt_tag,,1,1,1,1
 access_mt_cast,name_mt_cast,model_mt_cast,,1,1,1,1
+access_mt_link,name_mt_link,model_mt_link,,1,1,1,1
