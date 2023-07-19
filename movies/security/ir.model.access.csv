@@ -5,3 +5,4 @@ access_mt_category,name_mt_category,model_mt_category,,1,1,1,1
 access_mt_tag,name_mt_tag,model_mt_tag,,1,1,1,1
 access_mt_cast,name_mt_cast,model_mt_cast,,1,1,1,1
 access_mt_link,name_mt_link,model_mt_link,,1,1,1,1
+access_mt_additional,name_mt_additional,model_mt_additional,,1,1,1,1

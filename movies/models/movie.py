@@ -20,6 +20,7 @@ class Movie(models.Model):
     tag_id = fields.Many2one('mt.tag',string='Movie Type')
     cast_id = fields.Many2one('mt.cast', string='Casts')
     link_ids = fields.One2many('mt.link','link_id',string='Movie Link')
+    additional_ids = fields.One2many('mt.additional','additional_id',string='Additional Info')
     active = fields.Boolean(default=True)
     
 
@@ -35,3 +36,10 @@ class Link(models.Model):
     name = fields.Char ('Name')
     link = fields.Char ('Link')
     link_id = fields.Many2one('mt.movie', string='Links To Movie')
+
+class Additional(models.Model):
+    _name = 'mt.additional'
+    _description = 'Additional'
+    name = fields.Char ('Name')
+    description = fields.Char ('Description')
+    additional_id = fields.Many2one('mt.movie', string='Additional To Movie')
