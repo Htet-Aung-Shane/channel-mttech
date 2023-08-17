@@ -7,6 +7,7 @@
     'data': [
         'security/ir.model.access.csv',   
         'views/movie.xml',
+        'views/movie_website.xml',
         'views/genre.xml',
         'views/category.xml',
         'views/tag.xml',
