@@ -12,8 +12,13 @@
 										COURSES CATEGORY
 									</h5>
 									<div class="category-menu__link">
-										<ul id="menu" class="mt16 list-unstyled">
-										</ul>
+										<!-- <ul id="menu" class="mt16 list-unstyled">
+											<t t-foreach="countries or []" t-as="country">
+												<option t-att-value="country.id">
+													<t t-esc="country.name" />
+												</option>
+											</t>
+										</ul> -->
 									</div>
 								</div>
 							</section>
