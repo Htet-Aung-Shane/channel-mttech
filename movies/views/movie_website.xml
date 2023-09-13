@@ -3,25 +3,253 @@
 	<template id="movies_list" name="Movies">
 		<t t-call="website.layout">
 			<div class="container">
+				<section id="breadcrumbs">
+					<div class="container">
+						<div class="row border-bottom">
+							<ul class="breadcrumb mb0">
+								<li>
+									<a href="/">
+										Home
+									</a>
+								</li>
+								<li>
+									<a href="/courses">
+										Courses
+									</a>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</section>
 				<div class="row justify-content-between">
 					<div class="row">
 						<div class="col-md-12 col-lg-3 mt64">
 							<section id="gameview">
 								<div style="border-bottom: 1px solid #e7e7e7;">
 									<h5 class="title">
-										COURSES CATEGORY
+										TYPE
 									</h5>
 									<div class="category-menu__link">
-										<!-- <ul id="menu" class="mt16 list-unstyled">
+										<select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example">
+											<t t-foreach="types or []" t-as="type">
+												<option t-att-value="type.id">
+													<t t-esc="type.name" />
+												</option>
+											</t>
+										</select>
+									</div>
+								</div>
+							</section>
+							<section id="gameview">
+								<div style="border-bottom: 1px solid #e7e7e7;">
+									<h5 class="title">
+										CATEGORY
+									</h5>
+									<div class="category-menu__link">
+										<select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example">
+											<t t-foreach="categories or []" t-as="category">
+												<option t-att-value="category.id">
+													<t t-esc="category.name" />
+												</option>
+											</t>
+										</select>
+									</div>
+								</div>
+							</section>
+							<section id="gameview">
+								<div style="border-bottom: 1px solid #e7e7e7;">
+									<h5 class="title">
+										GENRE
+									</h5>
+									<div class="category-menu__link">
+										<select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example">
+											<t t-foreach="genres or []" t-as="genre">
+												<option t-att-value="genre.id">
+													<t t-esc="genre.name" />
+												</option>
+											</t>
+										</select>
+									</div>
+								</div>
+							</section>
+							<section id="gameview">
+								<div style="border-bottom: 1px solid #e7e7e7;">
+									<h5 class="title">
+										CAST
+									</h5>
+									<div class="category-menu__link">
+										<select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example">
+											<t t-foreach="casts or []" t-as="cast">
+												<option t-att-value="cast.id">
+													<t t-esc="cast.name" />
+												</option>
+											</t>
+										</select>
+									</div>
+								</div>
+							</section>
+							<section id="gameview">
+								<div style="border-bottom: 1px solid #e7e7e7;">
+									<h5 class="title">
+										COUNTRY
+									</h5>
+									<div class="category-menu__link">
+										<select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example">
 											<t t-foreach="countries or []" t-as="country">
 												<option t-att-value="country.id">
 													<t t-esc="country.name" />
 												</option>
 											</t>
-										</ul> -->
+										</select>
 									</div>
 								</div>
 							</section>
+						</div>
+						<div class="col-md-12 col-lg-9 mt64 mb64 pl-lg-4 course-vw">
+							<div class="container">
+								<div class="row align-items-center course-search">
+									<div class="col-md-8 col-sm-3 col-xs-6 text-start mt8 mb8">
+										<form t-attf-action="/courses" role="search" method="get" class="search-course">
+											<div class="input-group">
+												<input type="text" class="form-control" name="search" t-attf-placeholder="Search" t-att-value="search" style="border-radius:0px;border-right: 0; height:50px;" />
+												<span class="input-group-btn">
+													<button class="btn" type="submit" style="border-radius:0px">
+														<i class="fa fa-search">
+														</i>
+													</button>
+												</span>
+											</div>
+										</form>
+									</div>
+									<div class="col-md-4 col-sm-3 col-xs-6 text-start mt8 mb8">
+									</div>
+									<div class="row">
+										<t t-foreach="movies" t-as="movie">
+											<div t-if="movie_index % 4 == 0" class="clearfix" />
+											<div class="col-md-6 col-sm-4 col-xs-12 mb32 my_div">
+												<div class="card-body">
+													<div class="course-thumnail">
+													</div>
+													<div class="p-3 list-responsive">
+														<div class="d-flex">
+															<div class="subject-title col-lg-7 col-md-6 col-6">
+																<p class="website_lms_p content-ellipsis text-o-color-5">
+																	<t t-value="1" t-set="seprator" />
+																	<t t-foreach="movie.category_ids" t-as="category">
+																		<span t-field="category.name" />
+																		<t t-if="seprator &lt; len(movie.category_ids)">
+																			,
+																		</t>
+																		<t t-value="seprator + 1" t-set="seprator" />
+																	</t>
+																</p>
+															</div>
+														</div>
+														<div class="course-title">
+															<h2 class="website_lms_h2">
+																<a t-attf-href="/movie-detail/#{slug(movie)}" t-esc="movie.name" />
+															</h2>
+															<p>
+																Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+																do eiusmod tempor incididunt ut labore.
+															</p>
+														</div>
+														<div class="course-instructor">
+															<span class="faculty-img hidden-sm pr-2">
+																<img t-if="movie.image" t-att-src="image_data_uri(movie.image)" height="80" width="80" style="" class="img img-fluid" />
+															</span>
+														</div>
+														<div class="d-lg-flex course-abt-list">
+															<div class="d-flex course-about col px-0">
+																<div class="course-student">
+																	<span class="text-o-color-5">
+																		<i class="fa fa-users">
+																		</i>
+																		<b>
+																			<t t-esc="len(movie.category_ids)" />
+																		</b>
+																	</span>
+																</div>
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+											<div class="col-md-6 col-sm-4 col-xs-12 mb32 my_div">
+												<div class="card">
+													<img t-if="movie.image" t-att-src="image_data_uri(movie.image)" class="card-img-top" alt="Movie Poster" />
+													<div class="card-body">
+														<h5 class="card-title">
+															<a t-attf-href="/movie-detail/#{slug(movie)}" t-esc="movie.name" />
+														</h5>
+														<p class="card-text">
+															<strong>
+																Genre:
+															</strong>
+															<t t-value="1" t-set="seprator" />
+															<t t-foreach="movie.genre_ids" t-as="genre">
+																<span t-field="genre.name" />
+																<t t-if="seprator &lt; len(movie.genre_ids)">
+																	,
+																</t>
+																<t t-value="seprator + 1" t-set="seprator" />
+															</t>
+														</p>
+														<p class="card-text">
+															<strong>
+																Category:
+															</strong>
+															<t t-value="1" t-set="seprator" />
+															<t t-foreach="movie.category_ids" t-as="category">
+																<span t-field="category.name" />
+																<t t-if="seprator &lt; len(movie.category_ids)">
+																	,
+																</t>
+																<t t-value="seprator + 1" t-set="seprator" />
+															</t>
+														</p>
+														<p class="card-text">
+															<strong>
+																Movie Type:
+															</strong>
+															<span t-esc="movie.tag_id.name"></span>
+														</p>
+														<p class="card-text">
+															<strong>
+																Countries:
+															</strong>
+															<t t-value="1" t-set="seprator" />
+															<t t-foreach="movie.country_id" t-as="country">
+																<span t-field="country.name" />
+																<t t-if="seprator &lt; len(movie.country_id)">
+																	,
+																</t>
+																<t t-value="seprator + 1" t-set="seprator" />
+															</t>
+														</p>
+														<p class="card-text">
+															<strong>
+																Cast:
+															</strong>
+															<t t-value="1" t-set="seprator" />
+															<t t-foreach="movie.cast_ids" t-as="cast">
+																<span t-field="cast.name" />
+																<t t-if="seprator &lt; len(movie.category_ids)">
+																	,
+																</t>
+																<t t-value="seprator + 1" t-set="seprator" />
+															</t>
+														</p>
+														<a href="#" class="btn btn-primary">
+															View Detail
+														</a>
+													</div>
+												</div>
+											</div>
+										</t>
+									</div>
+								</div>
+							</div>
 						</div>
 					</div>
 				</div>

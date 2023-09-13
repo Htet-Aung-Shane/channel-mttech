@@ -18,4 +18,9 @@
     'installable': True,
     'auto_install': False,
     'application': True,
+    'assets':{
+        'web.assets_frontend': [
+            '/movies/static/src/scss/movie_common.scss'
+        ]
+    }
 }
