@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <menuitem id="access_right_root" name="Access Right Management" web_icon="mt_access_right,static/description/icon.png"/>
+
+</odoo>

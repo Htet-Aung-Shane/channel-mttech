@@ -6,6 +6,7 @@
     'author': 'Htet Aung Shane',
     'data': [
         'security/ir.model.access.csv',   
+        'security/permission.xml', 
         'views/movie.xml',
         'views/movie_website.xml',
         'views/genre.xml',
