@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+	<menuitem id="menu_service" name="Service" action="mt_service_act" web_icon="mttech_sales,static/description/icon.png" />
+</odoo>

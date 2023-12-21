@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <template id="movies.genre_report">
+        <t t-call="web.html_container">           
+
+        </t>
+    </template>
+    <record id="action_genre_report" model="ir.actions.report">
+        <field name="name">Movie Genre Report</field>
+        <field name="model">mt.genre</field>
+        <field name="report_type">xlsx</field>
+        <field name="report_name">movies.genre_report</field>
+        <field name="report_file">movies.genre_report</field>
+        <field name="binding_model_id" ref="model_mt_genre"/>
+        <field name="binding_type">report</field>
+
+    </record>
+
+</odoo>

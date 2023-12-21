@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+	<data>
+		<record id="mt_service_act" model="ir.actions.act_window">
+			<field name="name">Service</field>
+			<field name="res_model">mt.service</field>
+			<field name="view_mode">tree,form</field>
+		</record>
+		<record id="mt_service_view_tree" model="ir.ui.view">
+			<field name="name">mt.service.view.tree</field>
+			<field name="model">mt.service</field>
+			<field name="arch" type="xml">
+				<tree string="Service Type">
+                    <field name="name" />
+				</tree>
+			</field>
+		</record>
+		<record id="mt_service_view_form" model="ir.ui.view">
+			<field name="name">mt.service.view.form</field>
+			<field name="model">mt.service</field>
+			<field name="arch" type="xml">
+				<form string="">
+					<sheet>
+						<group>
+                            <group>
+                                <field name="name" />
+                                <field name="contact_id" />
+                                <field name="service_type_id" />
+                                <field name="service_date" />
+                                <field name="service_charges" />
+                                <field name="update_charges" />
+                                <field name="update_date" />
+                                <field name="unit" />
+                                <separator/>
+                            </group>
+						</group>
+					</sheet>
+				</form>
+			</field>
+		</record>
+	</data>
+</odoo>

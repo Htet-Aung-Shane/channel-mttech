@@ -15,6 +15,7 @@
         'views/cast.xml',
         'views/movie_sequence.xml',
         'views/menu.xml',     
+        'reports/genre_report_pdf.xml'
         ],
     'installable': True,
     'auto_install': False,

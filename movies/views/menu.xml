@@ -2,6 +2,7 @@
 <odoo>
     <menuitem id="menu_movie" name="Movie" action="mt_movie_view_act" web_icon="movie,static/description/icon.png" groups="movies.movie_permission"/>
     <menuitem id="menu_mtconfiguration" name="Configuration" parent="menu_movie"/>
+    <menuitem id="menu_mtmovie_reporting" name="Reporting" parent="menu_movie" action="action_genre_report" /> 
     <menuitem id="menu_genre" name="Genre" action="mt_genre_view_act" parent="menu_mtconfiguration" sequence="10"/>
     <menuitem id="menu_mtcategory" name="Category" action="mt_category_view_act" parent="menu_mtconfiguration" sequence="11"/>
     <menuitem id="menu_mttag" name="Movie Type" action="mt_tag_view_act" parent="menu_mtconfiguration" sequence="12"/>
