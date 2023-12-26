@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+	<data>
+		<record id="mt_company_act" model="ir.actions.act_window">
+			<field name="name">Company Name</field>
+			<field name="res_model">mt.company</field>
+			<field name="view_mode">tree,form</field>
+		</record>
+		<record id="mt_company_view_tree" model="ir.ui.view">
+			<field name="name">mt.company.view.tree</field>
+			<field name="model">mt.company</field>
+			<field name="arch" type="xml">
+				<tree string="Company List">
+                    <field name="name" />
+                    <field name="email"/>
+				</tree>
+			</field>
+		</record>
+		<record id="mt_company_view_form" model="ir.ui.view">
+			<field name="name">mt.company.view.form</field>
+			<field name="model">mt.company</field>
+			<field name="arch" type="xml">
+				<form string="Company">
+                    <field name="image" widget="image" class="oe_avatar" />
+					<sheet>
+						<group>
+                            <group>
+                                <field name="name" />
+                                <field name="email" />
+                                <field name="phone_no" />
+                                <separator/>
+                            </group>
+						</group>
+					</sheet>
+				</form>
+			</field>
+		</record>
+	</data>
+</odoo>

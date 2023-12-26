@@ -1,3 +1,4 @@
 id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
 access_mt_service,name_mt_service,model_mt_service,,1,1,1,1
 access_mt_service_type,name_mt_service_type,model_mt_service_type,,1,1,1,1
+access_mt_company,name_mt_company,model_mt_company,,1,1,1,1

@@ -1,1 +1,1 @@
-from . import service_type, service
+from . import service_type, service, client_company, contact_ext

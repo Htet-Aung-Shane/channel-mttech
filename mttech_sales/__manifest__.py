@@ -12,5 +12,6 @@
         'views/menu.xml', 
         'views/service.xml', 
         'views/service_type.xml', 
+        'views/company.xml', 
     ]
 }

@@ -11,7 +11,9 @@
 			<field name="model">mt.service</field>
 			<field name="arch" type="xml">
 				<tree string="Service Type">
-                    <field name="name" />
+                    <field name="no" />
+					<field name="contact_id" />
+					<field name="domain_name" />
 				</tree>
 			</field>
 		</record>
@@ -23,16 +25,20 @@
 					<sheet>
 						<group>
                             <group>
-                                <field name="name" />
+                                <field name="no" />
                                 <field name="contact_id" />
-                                <field name="service_type_id" />
+                                <field name="unit" />
                                 <field name="service_date" />
                                 <field name="service_charges" />
-                                <field name="update_charges" />
-                                <field name="update_date" />
-                                <field name="unit" />
+                                
                                 <separator/>
                             </group>
+							<group>
+								<field name="domain_name" />
+                                <field name="service_type_id" />
+								<field name="update_charges" />
+                                <field name="update_date" />
+							</group>
 						</group>
 					</sheet>
 				</form>
