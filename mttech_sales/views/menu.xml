@@ -1,8 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
-	<menuitem id="menu_service" name="Service" action="contacts.action_contacts" web_icon="mttech_sales,static/description/icon.png" />
-	<menuitem id="menu_service_type" name="Service Type" action="mt_service_type_act" parent="menu_service" />
-	<menuitem id="menu_mt_product" name="Products" action="account.product_product_action_sellable" parent="menu_service"/>
-	<menuitem id="menu_mt_client" name="Clients" action="contacts.action_contacts" parent="menu_service"/>
+	<menuitem id="menu_service" name="Service" action="mt_service_act" web_icon="mttech_sales,static/description/icon.png" />
+	<menuitem id="menu_mt_product" name="Product" action="account.product_product_action_sellable" parent="menu_service"/>
+	<menuitem id="menu_mt_client" name="Client" action="contacts.action_contacts" parent="menu_service"/>
 	<menuitem id="menu_mt_company" name="Company" action="mt_company_act" parent="menu_service"/>
+	<menuitem id="menu_mt_service_configuration" name="Configuration" parent="menu_service"/>
+	<menuitem id="menu_service_type" name="Service Type" action="mt_service_type_act" parent="menu_mt_service_configuration" />
+	<menuitem id="menu_mt_country" name="Country" action="base.action_country" parent="menu_mt_service_configuration"/>
+	<menuitem id="menu_mt_city" name="City" action="mt_city_act" parent="menu_mt_service_configuration"/>
 </odoo>

@@ -13,6 +13,7 @@
 				<tree string="Company List">
                     <field name="name" />
                     <field name="email"/>
+					<field name="city_id"/>
 				</tree>
 			</field>
 		</record>
@@ -23,11 +24,17 @@
 				<form string="Company">
                     <field name="image" widget="image" class="oe_avatar" />
 					<sheet>
-						<group>
-                            <group>
-                                <field name="name" />
+						<group>							
+                            <group>      
+								<field name="name" string="Name"/>                          
                                 <field name="email" />
                                 <field name="phone_no" />
+                                <separator/>
+                            </group>
+							<group>                                
+                                <field name="country_id" />
+                                <field name="city_id" />
+								<field name="address" />
                                 <separator/>
                             </group>
 						</group>

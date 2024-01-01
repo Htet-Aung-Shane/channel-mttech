@@ -13,5 +13,6 @@
         'views/service.xml', 
         'views/service_type.xml', 
         'views/company.xml', 
+        'views/city.xml', 
     ]
 }

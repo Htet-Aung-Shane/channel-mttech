@@ -13,3 +13,6 @@ class Company(models.Model):
     image = fields.Binary()
     email = fields.Char("Email")
     phone_no = fields.Char("Phone No")
+    country_id = fields.Many2one("res.country",string="Country")
+    city_id = fields.Many2one("mt.city",string="City")
+    address = fields.Char("Address")
