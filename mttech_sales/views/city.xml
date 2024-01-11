@@ -2,7 +2,7 @@
 <odoo>
 	<data>
 		<record id="mt_city_act" model="ir.actions.act_window">
-			<field name="name">City Name</field>
+			<field name="name">Cities</field>
 			<field name="res_model">mt.city</field>
 			<field name="view_mode">tree,form</field>
 		</record>

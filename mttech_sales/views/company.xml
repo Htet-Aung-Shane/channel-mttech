@@ -2,7 +2,7 @@
 <odoo>
 	<data>
 		<record id="mt_company_act" model="ir.actions.act_window">
-			<field name="name">Company Name</field>
+			<field name="name">Companies</field>
 			<field name="res_model">mt.company</field>
 			<field name="view_mode">tree,form</field>
 		</record>

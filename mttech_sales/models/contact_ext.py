@@ -12,4 +12,8 @@ class ContactExt(models.Model):
             self.phone = self.mt_company_id.phone_no
         if self.mt_company_id.email:
             self.email = self.mt_company_id.email
+        if self.mt_company_id.country_id:
+            self.country_id = self.mt_company_id.country_id
+        if self.mt_company_id.city_id:
+            self.city = self.mt_company_id.city_id.name
         print('onchange works>>>',self.mt_company_id.phone_no)
